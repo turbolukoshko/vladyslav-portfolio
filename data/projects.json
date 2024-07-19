@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Rock Paper Scissors",
+    "description": "The classic rock paper scissors game",
+    "url": "https://github.com/turbolukoshko/rock-paper-scissors",
+    "technologies": ["vanilla js", "html", "css", "es6+"],
+    "view": "https://rock-paper-scissors-seven-weld.vercel.app/",
+    "img": "../src/assets/rock-paper-scissors.jpg"
+  },
+  {
+    "name": "Time Tracking",
+    "description": "Time tracking dashboard",
+    "url": "https://github.com/turbolukoshko/time-tracking",
+    "technologies": [
+      "react",
+      "html",
+      "css",
+      "vite",
+      "react-router",
+      "typescript"
+    ],
+    "img": "../src/assets/time-tracker.jpg"
+  },
+  {
+    "name": "Theme Switcher",
+    "description": "Switch Theme with React (Light/Dark)",
+    "url": "https://github.com/turbolukoshko/theme-switcher",
+    "technologies": [
+      "react",
+      "html",
+      "css",
+      "vite",
+      "react-switch",
+      "typescript"
+    ],
+    "img": "../src/assets/theme-switcher.jpg"
+  },
+  {
+    "name": "Car catalog",
+    "description": "Car rental service",
+    "url": "https://github.com/turbolukoshko/car-catalog",
+    "technologies": [
+      "react",
+      "html",
+      "styled-components",
+      "vite",
+      "react-router",
+      "typescript",
+      "graphql",
+      "apollo",
+      "jest",
+      "react-testing-library"
+    ],
+    "img": "../src/assets/car-catalog.jpg"
+  }
+]

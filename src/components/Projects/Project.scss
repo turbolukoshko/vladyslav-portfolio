@@ -1,0 +1,132 @@
+.projects {
+  &__title {
+    font-size: 1.8rem;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    list-style: none;
+    padding: 0;
+    gap: 20px;
+
+    &-item {
+      height: 280px;
+      padding: 30px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      background-size: cover;
+      background-position: 0%;
+      opacity: 1;
+
+      &-img {
+        position: absolute;
+        opacity: 0.2;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+
+        img {
+          border-radius: 10px;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &-header {
+        z-index: 2;
+        text-align: center;
+
+        &-name {
+          color: #fff;
+          font-size: 32px;
+          font-weight: 600;
+          margin: 0;
+        }
+
+        &-description {
+          color: #fff;
+          font-size: 16px;
+          margin: 0;
+        }
+      }
+
+      &:hover {
+        background: linear-gradient(#e0234e 0%, #000 100%);
+      }
+
+      &-technologies {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        margin-bottom: 20px;
+
+        &-technology {
+          margin: 4px;
+          padding: 5px 10px;
+          color: #fff;
+          border-radius: 10px;
+          font-size: 12px;
+          background: rgb(199, 67, 67);
+        }
+      }
+
+      &-name,
+      &-description,
+      &-technologies,
+      &-technologies-technology,
+      &-link {
+        color: #fff;
+        z-index: 1;
+      }
+
+      &-link {
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid #fff;
+        padding: 10px;
+        border-radius: 4px;
+        font-weight: 500;
+        text-align: center;
+
+        &.margin-right {
+          margin-right: 10px;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background: #e0234e;
+          border-color: transparent;
+        }
+      }
+
+      &-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+      }
+    }
+  }
+
+  &__link {
+    margin: 2rem 0;
+    text-align: center;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

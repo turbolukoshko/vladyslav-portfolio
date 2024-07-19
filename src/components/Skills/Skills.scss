@@ -1,0 +1,9 @@
+.skills {
+  &__list-item {
+    color: rgb(255, 255, 255, 0.7);
+    margin-bottom: 10px;
+    &-title {
+      font-weight: 500;
+    }
+  }
+}

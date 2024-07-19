@@ -1,0 +1,10 @@
+.about-info {
+  display: flex;
+  padding: 10px;
+//   border: 2px solid #fff;
+
+  &__symbol {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+}

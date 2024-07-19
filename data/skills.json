@@ -1,0 +1,7 @@
+{
+  "languages": "JavaScript, TypeScript, Node.js",
+  "libraries": "React.js, Next.js, Redux, MobX, Express.js, GraphQL, Axios, TanStack, i18next, Storybook",
+  "technologies": "HTML5, CSS3, Jest, Enzyme, Chai, react-testing-library, Lighthouse, Micro Frontend, BFF, SSR, Playwright",
+  "tools": "AEM, Git, AWS, Webpack, Vite, Npm, Yarn, Jira, Azure, New Relic, OpenTelemetry, Coralogix, Grafana",
+  "methodologies": "Scrum, Kanban"
+}

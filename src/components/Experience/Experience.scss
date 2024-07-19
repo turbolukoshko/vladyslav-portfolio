@@ -1,0 +1,20 @@
+.experience__list {
+  &-item {
+    margin-bottom: 10px;
+
+    &-company {
+      font-weight: 400;
+    }
+
+    &-period {
+      font-weight: 300;
+      font-size: 14px;
+    }
+
+    &-company,
+    &-period {
+      margin: 0;
+      color: rgb(255, 255, 255, 0.7);
+    }
+  }
+}

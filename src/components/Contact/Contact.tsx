@@ -138,9 +138,7 @@ export const Contact: FC = (): JSX.Element => {
               <p className="contact__form-field-error">{errors.message}</p>
             )}
           </div>
-          {/* <div className="contact__form-field"> */}
           <button className="contact__form-button button">Submit</button>
-          {/* </div> */}
         </form>
       </div>
     </section>

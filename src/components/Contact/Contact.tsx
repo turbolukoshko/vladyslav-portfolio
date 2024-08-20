@@ -16,37 +16,36 @@ export const Contact: FC = (): JSX.Element => {
     emailjs.init("t7t37e8OIJE-vJEQw");
   }, []);
 
-  const { name, email, subject, message } = formData;
-
   const handleForm = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    const formErrors = validate();
-
+    const formErrors = validate(name, value);
     setErrors(formErrors);
-
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
   };
 
-  const validate = () => {
+  const validate = (fieldName?: string, value?: string) => {
     const formErrors: { [key: string]: string } = {};
 
-    if (!name) {
+    if (!value && fieldName === "name") {
       formErrors.name = "Name is required";
     }
 
-    if (!email) {
+    if (!value && fieldName === "email") {
       formErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      formData.email = "Email is invalid";
+    } else if (!/\S+@\S+\.\S+/.test(value || "") && fieldName === "email") {
+      formErrors.email = "Email is invalid";
     }
 
-    if (!subject) {
+    if (!value && fieldName === "subject") {
       formErrors.subject = "Subject is required";
     }
 
-    if (!message) {
+    if (!value && fieldName === "message") {
       formErrors.message = "Message is required";
     }
 
@@ -72,6 +71,13 @@ export const Contact: FC = (): JSX.Element => {
     }
   };
 
+  const handleOnBlur = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name } = e.target;
+    setErrors({ ...errors, [name]: "" });
+  };
+
   return (
     <section className="contact">
       <div className="container">
@@ -92,7 +98,8 @@ export const Contact: FC = (): JSX.Element => {
               type="text"
               placeholder="Name"
               className="contact__form-field-input"
-              value={name}
+              value={formData.name}
+              onBlur={(e) => handleOnBlur(e)}
               onChange={(e) => handleForm(e)}
               name="name"
             />
@@ -105,7 +112,8 @@ export const Contact: FC = (): JSX.Element => {
               type="text"
               placeholder="Email"
               className="contact__form-field-input"
-              value={email}
+              value={formData.email}
+              onBlur={(e) => handleOnBlur(e)}
               onChange={(e) => handleForm(e)}
               name="email"
             />
@@ -118,7 +126,8 @@ export const Contact: FC = (): JSX.Element => {
               type="text"
               placeholder="Subject"
               className="contact__form-field-input"
-              value={subject}
+              value={formData.subject}
+              onBlur={(e) => handleOnBlur(e)}
               onChange={(e) => handleForm(e)}
               name="subject"
             />
@@ -130,7 +139,8 @@ export const Contact: FC = (): JSX.Element => {
             <textarea
               className="contact__form-field-message"
               placeholder="Your message"
-              value={message}
+              value={formData.message}
+              onBlur={(e) => handleOnBlur(e)}
               onChange={(e) => handleForm(e)}
               name="message"
             />

@@ -3,6 +3,11 @@ import emailjs from "emailjs-com";
 
 import "./Contact.scss";
 
+// TODO
+const key = 't7t37e8OIJE-vJEQw';
+const server_key = 'service_hs7xo4h';
+const template = 'template_lyyb65a';
+
 export const Contact: FC = (): JSX.Element => {
   const [formData, setFormData] = useState({
     name: "",
@@ -13,7 +18,7 @@ export const Contact: FC = (): JSX.Element => {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
-    emailjs.init("t7t37e8OIJE-vJEQw");
+    emailjs.init(key);
   }, []);
 
   const handleForm = (
@@ -58,7 +63,7 @@ export const Contact: FC = (): JSX.Element => {
     const formErrors = validate();
 
     if (!Object.keys(formErrors).length) {
-      emailjs.send("service_hs7xo4h", "template_lyyb65a", formData).then(
+      emailjs.send(server_key, template, formData).then(
         () => {
           console.log("success");
         },

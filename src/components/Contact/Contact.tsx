@@ -4,12 +4,12 @@ import emailjs from "emailjs-com";
 import "./Contact.scss";
 
 // TODO
-const key = 't7t37e8OIJE-vJEQw';
-const server_key = 'service_hs7xo4h';
-const template = 'template_lyyb65a';
+const key = "t7t37e8OIJE-vJEQw";
+const server_key = "service_hs7xo4h";
+const template = "template_lyyb65a";
 
 export const Contact: FC = (): JSX.Element => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{ [key: string]: string }>({
     name: "",
     email: "",
     subject: "",
